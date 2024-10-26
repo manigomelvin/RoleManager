@@ -1,12 +1,15 @@
 Sample Users: Admin and Non Admin
 
-admin_user
-admin_pass123$$
+//Admin account
+UN:admin_user
+PW:admin_pass123$$
 
-normal_user
-normal_pass123$$
+//Non-Admin account
+UN:normal_user
+PW:normal_pass123$$
 
-normal_user2
-normal_pass2$$
+//Non-Admin account
+UN:normal_user2
+PW:normal_pass2$$
 
 Database in script.sql
