@@ -8,3 +8,5 @@ normal_pass123$$
 
 normal_user2
 normal_pass2$$
+
+Database in script.sql
