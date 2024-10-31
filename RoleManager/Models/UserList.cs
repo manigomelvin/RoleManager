@@ -7,5 +7,6 @@
         public string Role { get; set; }
         public bool IsAdmin => Role == "Admin";
         public string CompanyName { get; set; }
+        public int CompanyId { get; set; }
     }
 }

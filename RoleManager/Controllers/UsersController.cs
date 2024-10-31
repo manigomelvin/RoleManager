@@ -25,7 +25,7 @@ public class UsersController : ControllerBase
 
         if (roleClaim != "Admin")
         {
-            users = users.Where(u => !u.IsAdmin);
+            users = users.Where(u => u.CompanyId == companyId && !u.IsAdmin);
         }
 
         return Ok(users);

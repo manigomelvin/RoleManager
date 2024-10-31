@@ -30,10 +30,9 @@ public class UserRepository
         using (var connection = SqlConnection())
         {
             var sql = @"
-                SELECT u.Id, u.Username, u.Role, c.Name AS CompanyName
+                SELECT u.Id, u.Username, u.CompanyId, u.Role, c.Name AS CompanyName
                 FROM Users u
-                INNER JOIN Companies c ON u.CompanyId = c.Id
-                WHERE u.CompanyId = @CompanyId";
+                INNER JOIN Companies c ON u.CompanyId = c.Id";
             return await connection.QueryAsync<UserList>(sql, new { CompanyId = companyId });
         }
     }
