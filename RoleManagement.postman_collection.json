@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "33453ae1-c5b8-4245-b42b-2394eadcb0b7",
+		"name": "RoleManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4014921"
+	},
+	"item": [
+		{
+			"name": "Add User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl91c2VyIiwicm9sZSI6IkFkbWluIiwiY29tcGFueUlkIjoiMSIsImV4cCI6MTcyOTk2NjIzOSwiaXNzIjoiTXlJc3N1ZXJNZWx2aW5WZXJ5VmVyeUxvbmcxMjMiLCJhdWQiOiJNeUF1ZGllbmNlTWVsdmluVmVyeVZlcnlMb25nMTIzIn0.ruFX4dXd1di-7ozZPqbi0G_Cjq35Z9K3tS-xvhbcJDM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"acaleja\",\r\n  \"passwordHash\": \"acalejapass123$$\",\r\n  \"role\": \"User\",\r\n  \"companyId\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7003/api/Users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"Users"
+					]
+				},
+				"description": "Add User"
+			},
+			"response": []
+		},
+		{
+			"name": "Lists User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhY2FsZWphMSIsInJvbGUiOiJVc2VyIiwiY29tcGFueUlkIjoiMiIsImV4cCI6MTcyOTk2ODc3OCwiaXNzIjoiTXlJc3N1ZXJNZWx2aW5WZXJ5VmVyeUxvbmcxMjMiLCJhdWQiOiJNeUF1ZGllbmNlTWVsdmluVmVyeVZlcnlMb25nMTIzIn0.Rc-BL2HOIAPtbhzIV4wLtf6PVUzhS3Q_PMWha2rlz08",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7003/api/Users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl91c2VyIiwicm9sZSI6IkFkbWluIiwiY29tcGFueUlkIjoiMSIsImV4cCI6MTcyOTk2NzI0NiwiaXNzIjoiTXlJc3N1ZXJNZWx2aW5WZXJ5VmVyeUxvbmcxMjMiLCJhdWQiOiJNeUF1ZGllbmNlTWVsdmluVmVyeVZlcnlMb25nMTIzIn0.31snNrjUuZrMX_FeK3By4c-9dR9yEoeO0l7_8XkxlWs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"acaleja1\",\r\n  \"passwordHash\": \"newpassword123$$\",\r\n  \"role\": \"User\",\r\n  \"companyId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7003/api/Users",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin_user\",\r\n  \"password\": \"admin_pass123$$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7003/api/Auth/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"Auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl91c2VyIiwicm9sZSI6IkFkbWluIiwiY29tcGFueUlkIjoiMSIsImV4cCI6MTcyOTk2ODk5MiwiaXNzIjoiTXlJc3N1ZXJNZWx2aW5WZXJ5VmVyeUxvbmcxMjMiLCJhdWQiOiJNeUF1ZGllbmNlTWVsdmluVmVyeVZlcnlMb25nMTIzIn0.FzwvmJiWpUpLTnoci6nP0Css5upXXsuwbvimynoo9VE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7003/api/Users/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7003",
+					"path": [
+						"api",
+						"Users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
