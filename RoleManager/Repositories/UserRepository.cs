@@ -25,12 +25,16 @@ public class UserRepository
         }
     }
 
-    public async Task<IEnumerable<User>> GetCompanyUsers(int companyId)
+    public async Task<IEnumerable<UserList>> GetCompanyUsers(int companyId)
     {
         using (var connection = SqlConnection())
         {
-            string sql = "SELECT * FROM Users WHERE CompanyId = @CompanyId";
-            return await connection.QueryAsync<User>(sql, new { CompanyId = companyId });
+            var sql = @"
+                SELECT u.Id, u.Username, u.Role, c.Name AS CompanyName
+                FROM Users u
+                INNER JOIN Companies c ON u.CompanyId = c.Id
+                WHERE u.CompanyId = @CompanyId";
+            return await connection.QueryAsync<UserList>(sql, new { CompanyId = companyId });
         }
     }
 
